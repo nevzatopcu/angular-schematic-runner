@@ -2,7 +2,7 @@
   "name": "angular-schematic-runner",
   "displayName": "Angular Generate Schematics Runner",
   "description": "You can just create an Angular classes by this extension, it will not care your module and anything else",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "NevzatTopu",
   "repository": {
     "url": "https://github.com/nevzatopcu/angular-schematic-runner"
