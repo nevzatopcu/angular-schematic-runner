@@ -1,0 +1,90 @@
+{
+  "name": "angular-schematic-runner",
+  "displayName": "Angular Generate Schematics Runner",
+  "description": "You can just create an Angular classes by this extension, it will not care your module and anything else",
+  "version": "0.0.1",
+  "publisher": "NevzatTopu",
+  "repository": {
+    "url": "https://github.com/nevzatopcu/angular-schematic-runner"
+  },
+  "engines": {
+    "vscode": "^1.67.0"
+  },
+  "categories": [
+    "Snippets",
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onCommand:angular-schematic-runner.createComponent",
+    "onCommand:angular-schematic-runner.createService",
+    "onCommand:angular-schematic-runner.createDirective"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "angular-schematic-runner.createComponent",
+        "title": "Create Angular Component"
+      },
+      {
+        "command": "angular-schematic-runner.createService",
+        "title": "Create Angular Service"
+      },
+      {
+        "command": "angular-schematic-runner.createDirective",
+        "title": "Create Angular Directive"
+      },
+      {
+        "command": "angular-schematic-runner.createPipe",
+        "title": "Create Angular Pipe"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "angular-schematic-runner.createComponent",
+          "group": "Angular"
+        },
+        {
+          "command": "angular-schematic-runner.createService",
+          "group": "Angular"
+        },
+        {
+          "command": "angular-schematic-runner.createDirective",
+          "group": "Angular"
+        },
+        {
+          "command": "angular-schematic-runner.createPipe",
+          "group": "Angular"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.67.0",
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "14.x",
+    "@typescript-eslint/eslint-plugin": "^5.21.0",
+    "@typescript-eslint/parser": "^5.21.0",
+    "eslint": "^8.14.0",
+    "glob": "^8.0.1",
+    "mocha": "^9.2.2",
+    "typescript": "^4.6.4",
+    "ts-loader": "^9.2.8",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
+    "@vscode/test-electron": "^2.1.3"
+  }
+}
